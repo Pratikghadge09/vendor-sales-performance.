@@ -10,3 +10,14 @@ An end-to-end data pipeline and SQL analysis project evaluating vendor sales per
 * Set up a local **SQLite** database using **SQLAlchemy**.
 * Implemented a data chunking mechanism using **Pandas** to bypass memory limitations when reading massive files.
 * Built dynamic logic to replace tables on the first chunk and append subsequent data chunks seamlessly.
+
+## Day 2: Advanced SQL Joins & Data Consolidation 🔗
+
+*Objective:* Consolidate fragmented inventory, purchase, sales, and freight data into a single master summary table to prepare for analysis and visualization.
+
+*What I did today:*
+- Queried and explored raw data from SQLite tables (`purchases`, `sales`, `vendor_invoice`, etc.) using Pandas.
+- Filtered and aggregated purchase and sales data for specific vendors to understand table structures.
+- Wrote a complex SQL query using Common Table Expressions (CTEs) and `LEFT JOIN`s to merge purchase metrics, sales metrics, and freight costs.
+- Generated a master `vendor_sales_summary` table containing total purchase quantities/dollars, total sales quantities/dollars, and freight costs per vendor and brand.
+- Saved the consolidated master table back into the `inventory.db` SQLite database for future downstream analysis.

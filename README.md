@@ -21,3 +21,13 @@ An end-to-end data pipeline and SQL analysis project evaluating vendor sales per
 - Wrote a complex SQL query using Common Table Expressions (CTEs) and `LEFT JOIN`s to merge purchase metrics, sales metrics, and freight costs.
 - Generated a master `vendor_sales_summary` table containing total purchase quantities/dollars, total sales quantities/dollars, and freight costs per vendor and brand.
 - Saved the consolidated master table back into the `inventory.db` SQLite database for future downstream analysis.
+
+## Day 3: Feature Engineering & Database Updates ⚙️
+
+*Objective:* Transform raw financial data into actionable business metrics and permanently update the project's SQLite database.
+
+*What I did today:*
+- Engineered key retail performance features (`GrossProfit`, `ProfitMargin`, `StockTurnover`, and `SalestoPurchaseRatio`) using Pandas.
+- Exported the enriched dataframe back into the local `inventory.db` SQLite database.
+- Utilized the Pandas `.to_sql()` method with `if_exists='replace'` to safely overwrite the legacy `vendor_sales_summary` table without data loss.
+- Managed and debugged Jupyter Notebook cell execution states to prevent data overwriting and resolved SQLite `OperationalError` constraints.
